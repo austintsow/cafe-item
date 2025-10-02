@@ -43,7 +43,7 @@ function ResultPageContent() {
   useEffect(() => {
     setMounted(true);
     // Update page title dynamically (client-side only)
-    document.title = `You're a ${result.title}! | What Café Item Are You?`;
+    document.title = `your café persona | matchame.cafe`;
   }, [result.title]);
 
   const handleRetake = () => {
@@ -61,11 +61,21 @@ function ResultPageContent() {
     if (!cardRef.current) return;
     
     try {
+      // Wait for fonts to be fully loaded
+      await document.fonts.ready;
+      
+      // Small delay to ensure rendering is complete
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
       const canvas = await html2canvas(cardRef.current, {
         backgroundColor: '#fdfcfb',
         scale: 3, // Higher resolution
         logging: false,
         useCORS: true,
+        allowTaint: true,
+        foreignObjectRendering: false,
+        imageTimeout: 0,
+        removeContainer: true,
       });
       
       // Create a new canvas with rounded corners
@@ -180,7 +190,25 @@ function ResultPageContent() {
         {/* Footer note */}
         <p className="text-xs text-stone-400 text-center leading-relaxed">
           Results are based on your personality preferences.<br />
-          Curated by Austin and David (probably at a café) ☕
+          Curated by{" "}
+          <a 
+            href="https://www.linkedin.com/in/tsow/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="underline hover:text-stone-600 transition-colors"
+          >
+            Austin
+          </a>
+          {" "}and{" "}
+          <a 
+            href="https://www.linkedin.com/in/davidaoyama/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="underline hover:text-stone-600 transition-colors"
+          >
+            David
+          </a>
+          {" "}(chai latte and americano) ☕
         </p>
       </div>
     </main>

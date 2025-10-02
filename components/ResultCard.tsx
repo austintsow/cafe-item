@@ -64,16 +64,16 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
       <div className={`absolute inset-0 bg-gradient-to-br ${backgroundClass} transition-colors duration-500`} />
       
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col h-full p-5">
+      <div className="relative z-10 flex flex-col h-full p-4 sm:p-5">
         {/* Header with branding */}
-        <div className="flex justify-start items-start mb-2">
-          <div className="text-emerald-700 text-sm font-bold">
+        <div className="flex justify-start items-start mb-1.5">
+          <div className="text-emerald-700 text-xs sm:text-sm font-bold">
             matchame.cafe
           </div>
         </div>
 
         {/* Title and Icon */}
-        <div className="mb-3 flex items-center gap-3">
+        <div className="mb-2 flex items-center gap-2">
           <div style={{ width: '60%' }}>
             {(() => {
               // Remove "You're " and any leading article (a/an/the)
@@ -88,25 +88,25 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
               
               return (
                 <>
-                  <p className="text-stone-900 text-xs font-medium mb-1">You are {article}</p>
-                  <h1 className="text-2xl font-bold text-stone-900 leading-tight">
+                  <p className="text-stone-900 text-[10px] sm:text-xs font-medium mb-0.5">You are {article}</p>
+                  <h1 className="text-lg sm:text-2xl font-bold text-stone-900 leading-tight">
                     {itemName}
                   </h1>
                 </>
               );
             })()}
           </div>
-          <div className="bg-white/95 rounded-2xl p-3 shadow-lg flex items-center justify-center" style={{ width: '40%' }}>
-            <CafeItemIcon itemKey={result.key} className="w-20 h-20" />
+          <div className="bg-white/95 rounded-2xl p-2 sm:p-3 shadow-lg flex items-center justify-center" style={{ width: '40%' }}>
+            <CafeItemIcon itemKey={result.key} className="w-16 h-16 sm:w-20 sm:h-20" />
           </div>
         </div>
 
         {/* Traits as tags */}
-        <div className="flex flex-wrap gap-1.5 mb-2 justify-center">
+        <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-1.5 justify-center">
           {result.traits.map((trait, idx) => (
             <span
               key={idx}
-              className="px-2.5 py-1 bg-white/90 text-stone-800 text-[10px] font-medium rounded-full"
+              className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white/90 text-stone-800 text-[9px] sm:text-[10px] font-medium rounded-full"
             >
               #{trait.replace(/\s+/g, "")}
             </span>
@@ -114,35 +114,35 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
         </div>
 
         {/* Two column layout for main content */}
-        <div className="grid grid-cols-2 gap-2 mb-2">
+        <div className="grid grid-cols-2 gap-1.5 sm:gap-2 mb-2">
           {/* Left column */}
-          <div className="space-y-2">
+          <div className="space-y-1.5 sm:space-y-2">
             {/* Café Persona */}
-            <div className="bg-white/95 rounded-xl p-2.5 border-2 border-emerald-500">
-              <h3 className="text-[10px] font-bold text-stone-900 mb-1">CAFÉ PERSONA</h3>
-              <p className="text-xs font-bold text-emerald-600">{result.cafePersona}</p>
+            <div className="bg-white/95 rounded-xl p-2 border-2 border-emerald-500">
+              <h3 className="text-[8px] sm:text-[10px] font-bold text-stone-900 mb-0.5">CAFÉ PERSONA</h3>
+              <p className="text-[10px] sm:text-xs font-bold text-emerald-600">{result.cafePersona}</p>
             </div>
 
             {/* Vibe Level */}
-            <div className="bg-white/95 rounded-xl p-2.5 border-2 border-blue-500">
-              <h3 className="text-[10px] font-bold text-stone-900 mb-1">VIBE LEVEL</h3>
-              <div className="text-2xl font-bold text-blue-600 mb-1">{result.vibeLevel}%</div>
-              <p className="text-[9px] text-stone-600">{result.vibeLabel}</p>
+            <div className="bg-white/95 rounded-xl p-2 border-2 border-blue-500">
+              <h3 className="text-[8px] sm:text-[10px] font-bold text-stone-900 mb-0.5">VIBE LEVEL</h3>
+              <div className="text-xl sm:text-2xl font-bold text-blue-600 mb-0.5">{result.vibeLevel}%</div>
+              <p className="text-[8px] sm:text-[9px] text-stone-600">{result.vibeLabel}</p>
             </div>
           </div>
 
           {/* Right column */}
-          <div className="space-y-2">
+          <div className="space-y-1.5 sm:space-y-2">
             {/* Lucky Charm */}
-            <div className="bg-white/95 rounded-xl p-2.5 border-2 border-amber-500">
-              <h3 className="text-[10px] font-bold text-stone-900 mb-1">CAFÉ LUCKY CHARM</h3>
-              <p className="text-xs font-bold text-amber-600">{result.luckyCharm}</p>
+            <div className="bg-white/95 rounded-xl p-2 border-2 border-amber-500">
+              <h3 className="text-[8px] sm:text-[10px] font-bold text-stone-900 mb-0.5">CAFÉ LUCKY CHARM</h3>
+              <p className="text-[10px] sm:text-xs font-bold text-amber-600">{result.luckyCharm}</p>
             </div>
 
             {/* Explanation */}
-            <div className="bg-white/95 rounded-xl p-2.5">
-              <h3 className="text-[10px] font-bold text-stone-900 mb-1">WHY</h3>
-              <p className="text-[9px] text-stone-700 leading-relaxed">
+            <div className="bg-white/95 rounded-xl p-2">
+              <h3 className="text-[8px] sm:text-[10px] font-bold text-stone-900 mb-0.5">WHY</h3>
+              <p className="text-[8px] sm:text-[9px] text-stone-700 leading-snug">
                 {(() => {
                   // Remove "You're " and any leading article (a/an/the)
                   const itemName = result.title
@@ -167,10 +167,10 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
         </div>
 
         {/* Tablemates and Neighboring Tables */}
-        <div className="grid grid-cols-2 gap-2 mb-2">
+        <div className="grid grid-cols-2 gap-1.5 sm:gap-2 mb-2">
           {/* Tablemates */}
-          <div className="bg-white/95 rounded-xl p-2">
-            <h3 className="text-[10px] font-bold text-emerald-600 mb-1.5">
+          <div className="bg-white/95 rounded-xl p-1.5 sm:p-2">
+            <h3 className="text-[8px] sm:text-[10px] font-bold text-emerald-600 mb-1">
               TABLEMATES{" "}
               <Tooltip text="Who you'd want sitting across from you">
                 <span className="text-stone-400">(i)</span>
@@ -191,8 +191,8 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
           </div>
 
           {/* Neighboring Tables */}
-          <div className="bg-white/95 rounded-xl p-2">
-            <h3 className="text-[10px] font-bold text-rose-600 mb-1.5">
+          <div className="bg-white/95 rounded-xl p-1.5 sm:p-2">
+            <h3 className="text-[8px] sm:text-[10px] font-bold text-rose-600 mb-1">
               NEIGHBORING TABLES{" "}
               <Tooltip text="Who you tolerate nearby but don't join">
                 <span className="text-stone-400">(i)</span>
@@ -214,10 +214,10 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
         </div>
 
         {/* Best Pairings and Bad Combos */}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
           {/* Best Pairings */}
-          <div className="bg-white/95 rounded-xl p-2">
-            <h3 className="text-[10px] font-bold text-emerald-600 mb-1.5">
+          <div className="bg-white/95 rounded-xl p-1.5 sm:p-2">
+            <h3 className="text-[8px] sm:text-[10px] font-bold text-emerald-600 mb-1">
               BEST PAIRINGS{" "}
               <Tooltip text="Food/drinks that enhance your vibe">
                 <span className="text-stone-400">(i)</span>
@@ -238,8 +238,8 @@ export default function ResultCard({ result, theme }: ResultCardProps) {
           </div>
 
           {/* Bad Combos */}
-          <div className="bg-white/95 rounded-xl p-2">
-            <h3 className="text-[10px] font-bold text-rose-600 mb-1.5">
+          <div className="bg-white/95 rounded-xl p-1.5 sm:p-2">
+            <h3 className="text-[8px] sm:text-[10px] font-bold text-rose-600 mb-1">
               BAD COMBOS{" "}
               <Tooltip text="Food/drinks that kill your flow">
                 <span className="text-stone-400">(i)</span>

@@ -437,7 +437,7 @@ export default function Home() {
         {/* Minimal Stats */}
         <div className="flex justify-center gap-8 text-xs text-stone-400">
           <div className="text-center">
-            <div className="font-medium text-stone-700">~2 min</div>
+            <div className="font-medium text-stone-700">~1 min</div>
           </div>
           <div className="text-stone-300">•</div>
           <div className="text-center">
