@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface ItemPosition {
   x: number;
@@ -12,6 +13,8 @@ interface DragState {
   itemId: string | null;
   startX: number;
   startY: number;
+  initialItemX: number;
+  initialItemY: number;
 }
 
 export default function Home() {
@@ -21,6 +24,8 @@ export default function Home() {
     itemId: null,
     startX: 0,
     startY: 0,
+    initialItemX: 0,
+    initialItemY: 0,
   });
 
   const [itemPositions, setItemPositions] = useState<Record<string, ItemPosition>>({
@@ -47,6 +52,8 @@ export default function Home() {
       itemId,
       startX: clientX,
       startY: clientY,
+      initialItemX: itemPositions[itemId].x,
+      initialItemY: itemPositions[itemId].y,
     });
   };
 
@@ -56,21 +63,25 @@ export default function Home() {
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
     
+    // Calculate total offset from drag start point
     const deltaX = ((clientX - dragState.startX) / window.innerWidth) * 100;
     const deltaY = ((clientY - dragState.startY) / window.innerHeight) * 100;
+    
+    // Items that are positioned from the right (matchaLatte, flowers, avocadoToast, coffeeBeans)
+    // need inverted X delta since their left position is calculated as (100 - x)
+    const invertedXItems = ['matchaLatte', 'flowers', 'avocadoToast', 'coffeeBeans'];
+    // Items that are positioned from the bottom (coffeeBeans) need inverted Y delta
+    const invertedYItems = ['coffeeBeans'];
+    
+    const xMultiplier = invertedXItems.includes(dragState.itemId!) ? -1 : 1;
+    const yMultiplier = invertedYItems.includes(dragState.itemId!) ? -1 : 1;
     
     setItemPositions(prev => ({
       ...prev,
       [dragState.itemId!]: {
-        x: Math.max(0, Math.min(90, prev[dragState.itemId!].x + deltaX)),
-        y: Math.max(0, Math.min(90, prev[dragState.itemId!].y + deltaY)),
+        x: Math.max(0, Math.min(90, dragState.initialItemX + (deltaX * xMultiplier))),
+        y: Math.max(0, Math.min(90, dragState.initialItemY + (deltaY * yMultiplier))),
       },
-    }));
-    
-    setDragState(prev => ({
-      ...prev,
-      startX: clientX,
-      startY: clientY,
     }));
   };
 
@@ -80,6 +91,8 @@ export default function Home() {
       itemId: null,
       startX: 0,
       startY: 0,
+      initialItemX: 0,
+      initialItemY: 0,
     });
   };
 
@@ -305,7 +318,7 @@ export default function Home() {
 
       </div>
       
-      <div className="w-full max-w-sm mx-auto space-y-12 relative z-10">
+      <div className="w-full max-w-sm mx-auto space-y-12 relative z-10 pointer-events-none">
         
         {/* White Coffee Mug - Hand Drawn Style */}
         <div className="flex justify-center">
@@ -413,10 +426,12 @@ export default function Home() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <button className="w-full px-8 py-4 text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 active:scale-95 transition-all duration-150 border-2 border-stone-900">
-            start quiz
-          </button>
+        <div className="flex justify-center pointer-events-auto">
+          <Link href="/quiz" className="w-full">
+            <button className="w-full px-8 py-4 text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 active:scale-95 transition-all duration-150 border-2 border-stone-900">
+              start quiz
+            </button>
+          </Link>
         </div>
 
         {/* Minimal Stats */}
