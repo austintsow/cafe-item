@@ -13,11 +13,11 @@ export default function QuestionCard({
   onSelectOption,
 }: QuestionCardProps) {
   return (
-    <div className="space-y-6" role="radiogroup" aria-labelledby={`question-${question.id}`}>
+    <div className="space-y-8" role="radiogroup" aria-labelledby={`question-${question.id}`}>
       {/* Question prompt */}
       <h2
         id={`question-${question.id}`}
-        className="text-xl font-medium text-stone-900 leading-relaxed"
+        className="text-2xl font-light text-stone-900 leading-relaxed text-center px-2"
       >
         {question.prompt}
       </h2>
