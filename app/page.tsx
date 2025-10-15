@@ -318,11 +318,11 @@ export default function Home() {
 
       </div>
       
-      <div className="w-full max-w-sm mx-auto space-y-12 relative z-10 pointer-events-none">
-        
+      <div className="w-full max-w-sm mx-auto space-y-8 sm:space-y-12 relative z-10 pointer-events-none">
+
         {/* White Coffee Mug - Hand Drawn Style */}
         <div className="flex justify-center">
-          <svg width="120" height="140" viewBox="0 0 120 140" className="w-32 h-36">
+          <svg width="120" height="140" viewBox="0 0 120 140" className="w-28 h-32 sm:w-32 sm:h-36">
             {/* Plate - Hand drawn */}
             <ellipse cx="60" cy="115" rx="45" ry="8" 
                      fill="white" 
@@ -416,8 +416,8 @@ export default function Home() {
         </div>
 
         {/* Main Text */}
-        <div className="space-y-6 text-center">
-          <h1 className="text-2xl leading-relaxed text-stone-900 font-light tracking-wide">
+        <div className="space-y-4 sm:space-y-6 text-center px-4">
+          <h1 className="text-xl sm:text-2xl leading-relaxed text-stone-900 font-light tracking-wide">
             what cafe item<br />are you?
           </h1>
           <p className="text-sm text-stone-500 leading-relaxed max-w-[260px] mx-auto">
@@ -426,16 +426,16 @@ export default function Home() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center pointer-events-auto">
+        <div className="flex justify-center pointer-events-auto px-4">
           <Link href="/quiz" className="w-full">
-            <button className="w-full px-8 py-4 text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 active:scale-95 transition-all duration-150 border-2 border-stone-900">
+            <button className="w-full px-8 py-4 text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 active:scale-95 transition-all duration-150 border-2 border-stone-900 min-h-[48px] touch-manipulation">
               start quiz
             </button>
           </Link>
         </div>
 
         {/* Minimal Stats */}
-        <div className="flex justify-center gap-8 text-xs text-stone-400">
+        <div className="flex justify-center gap-6 sm:gap-8 text-xs text-stone-400">
           <div className="text-center">
             <div className="font-medium text-stone-700">~1 min</div>
           </div>

@@ -116,8 +116,8 @@ function ResultPageContent() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fdfcfb] py-6 px-6">
-      <div className="max-w-md mx-auto space-y-6">
+    <main className="min-h-screen bg-[#fdfcfb] py-4 sm:py-6 px-4 sm:px-6">
+      <div className="max-w-md mx-auto space-y-4 sm:space-y-6">
         {/* Result Card with fade-in animation */}
         <div ref={cardRef} className={`transition-all duration-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <ResultCard result={result} theme={THEMES[theme]} />
@@ -175,10 +175,10 @@ function ResultPageContent() {
           <button
             onClick={handleRetake}
             className="
-              w-full px-6 py-3 rounded-xl
+              w-full px-6 py-3 rounded-xl min-h-[48px]
               text-sm font-medium text-stone-700
               bg-stone-100 hover:bg-stone-200
-              active:scale-95
+              active:scale-95 touch-manipulation
               transition-all duration-150
               focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2
             "

@@ -94,12 +94,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('coffeeCup') && (
           <div
             key={`coffeeCup-${index}`}
-            className="absolute w-24 h-28"
+            className="absolute w-16 h-20 sm:w-24 sm:h-28"
             style={{
-              ...(visibleItems.topLeft === 'coffeeCup' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'coffeeCup' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'coffeeCup' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'coffeeCup' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'coffeeCup' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'coffeeCup' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'coffeeCup' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'coffeeCup' && { bottom: '20%', right: '3%' }),
               opacity: 0.5,
               animation: mounted ? 'float 6s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               '--rotate-start': '12deg',
@@ -120,12 +120,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('croissant') && (
           <div
             key={`croissant-${index}`}
-            className="absolute w-32 h-20"
+            className="absolute w-20 h-12 sm:w-32 sm:h-20"
             style={{
-              ...(visibleItems.topLeft === 'croissant' && { top: '12%', left: '5%' }),
-              ...(visibleItems.topRight === 'croissant' && { top: '12%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'croissant' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'croissant' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'croissant' && { top: '8%', left: '3%' }),
+              ...(visibleItems.topRight === 'croissant' && { top: '8%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'croissant' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'croissant' && { bottom: '20%', right: '3%' }),
               opacity: 0.42,
               animation: mounted ? 'float 7s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.1s',
@@ -147,12 +147,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('matchaLatte') && (
           <div
             key={`matchaLatte-${index}`}
-            className="absolute w-20 h-32"
+            className="absolute w-14 h-24 sm:w-20 sm:h-32"
             style={{
-              ...(visibleItems.topLeft === 'matchaLatte' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'matchaLatte' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'matchaLatte' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'matchaLatte' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'matchaLatte' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'matchaLatte' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'matchaLatte' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'matchaLatte' && { bottom: '20%', right: '3%' }),
               opacity: 0.45,
               animation: mounted ? 'float 5.5s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.2s',
@@ -174,12 +174,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('coffeeBeans') && (
           <div
             key={`coffeeBeans-${index}`}
-            className="absolute w-20 h-20"
+            className="absolute w-14 h-14 sm:w-20 sm:h-20"
             style={{
-              ...(visibleItems.topLeft === 'coffeeBeans' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'coffeeBeans' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'coffeeBeans' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'coffeeBeans' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'coffeeBeans' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'coffeeBeans' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'coffeeBeans' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'coffeeBeans' && { bottom: '20%', right: '3%' }),
               opacity: 0.32,
               animation: mounted ? 'float 6.5s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.3s',
@@ -202,12 +202,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('flowers') && (
           <div
             key={`flowers-${index}`}
-            className="absolute w-24 h-36"
+            className="absolute w-16 h-24 sm:w-24 sm:h-36"
             style={{
-              ...(visibleItems.topLeft === 'flowers' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'flowers' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'flowers' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'flowers' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'flowers' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'flowers' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'flowers' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'flowers' && { bottom: '20%', right: '3%' }),
               opacity: 0.45,
               animation: mounted ? 'float 6.2s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.1s',
@@ -249,12 +249,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('avocadoToast') && (
           <div
             key={`avocadoToast-${index}`}
-            className="absolute w-26 h-24"
+            className="absolute w-18 h-18 sm:w-26 sm:h-24"
             style={{
-              ...(visibleItems.topLeft === 'avocadoToast' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'avocadoToast' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'avocadoToast' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'avocadoToast' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'avocadoToast' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'avocadoToast' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'avocadoToast' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'avocadoToast' && { bottom: '20%', right: '3%' }),
               opacity: 0.42,
               animation: mounted ? 'float 6.8s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.2s',
@@ -280,12 +280,12 @@ export default function QuizPage() {
         {visibleItems && Object.values(visibleItems).includes('bagel') && (
           <div
             key={`bagel-${index}`}
-            className="absolute w-24 h-20"
+            className="absolute w-16 h-14 sm:w-24 sm:h-20"
             style={{
-              ...(visibleItems.topLeft === 'bagel' && { top: '8%', left: '5%' }),
-              ...(visibleItems.topRight === 'bagel' && { top: '8%', right: '5%' }),
-              ...(visibleItems.bottomLeft === 'bagel' && { bottom: '15%', left: '5%' }),
-              ...(visibleItems.bottomRight === 'bagel' && { bottom: '15%', right: '5%' }),
+              ...(visibleItems.topLeft === 'bagel' && { top: '6%', left: '3%' }),
+              ...(visibleItems.topRight === 'bagel' && { top: '6%', right: '3%' }),
+              ...(visibleItems.bottomLeft === 'bagel' && { bottom: '20%', left: '3%' }),
+              ...(visibleItems.bottomRight === 'bagel' && { bottom: '20%', right: '3%' }),
               opacity: 0.42,
               animation: mounted ? 'float 5.8s ease-in-out infinite, fadeInStay 0.5s ease-out forwards' : 'none',
               animationDelay: '0.15s',
@@ -313,23 +313,25 @@ export default function QuizPage() {
       <div className="relative z-10">
         {phase === "quiz" && (
           <>
-            <div className="px-4 pt-6">
-              <QuizProgress current={index + 1} total={total} />
-            </div>
-            <div
-              key={index}
-              className="px-4 py-8 transition-all duration-500"
-              style={{
-                opacity: mounted ? 1 : 0,
-                transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-              }}
-            >
-              <div className="max-w-xl mx-auto">
-                <QuestionCard
-                  question={QUESTIONS[index]}
-                  selectedOptionId={selected}
-                  onSelectOption={onSelectOption}
-                />
+            <div className="px-4 pt-6 pb-28 sm:pb-32">
+              <div className="mb-6">
+                <QuizProgress current={index + 1} total={total} />
+              </div>
+              <div
+                key={index}
+                className="transition-all duration-500"
+                style={{
+                  opacity: mounted ? 1 : 0,
+                  transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+                }}
+              >
+                <div className="max-w-xl mx-auto">
+                  <QuestionCard
+                    question={QUESTIONS[index]}
+                    selectedOptionId={selected}
+                    onSelectOption={onSelectOption}
+                  />
+                </div>
               </div>
             </div>
             <StickyNav
